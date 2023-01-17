@@ -1,3 +1,4 @@
+import Feedback from '..//components/Feedback';
 export const App = () => {
   return (
     <div
@@ -10,7 +11,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      Працює
+      <Feedback />
     </div>
   );
 };
