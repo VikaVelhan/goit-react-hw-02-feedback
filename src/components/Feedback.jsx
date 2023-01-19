@@ -1,4 +1,5 @@
 import React from 'react';
+import Statistics from '..//components/Statistics/Statistics';
 
 class Feedback extends React.Component {
   state = {
@@ -35,10 +36,10 @@ class Feedback extends React.Component {
 
   countPositiveFeedbackPercentage = () => {
     if (this.countTotalFeedback() !== 0) {
-      const percentage = Math.round(
+      const positivePercentage = Math.round(
         (this.state.good / this.countTotalFeedback()) * 100
       );
-      return percentage;
+      return positivePercentage;
     } else return 0;
   };
   render() {
@@ -56,16 +57,13 @@ class Feedback extends React.Component {
             Bad
           </button>
         </div>
-        <div>
-          <h2>Statistics</h2>
-          <ul>
-            <li>Good:{this.state.good}</li>
-            <li>Neutral:{this.state.neutral}</li>
-            <li>Bad:{this.state.bad}</li>
-            <li>Total:{this.countTotalFeedback()}</li>
-            <li>Positive feedbac:{this.countPositiveFeedbackPercentage()}%</li>
-          </ul>
-        </div>
+        <Statistics
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+          total={this.countTotalFeedback()}
+          positivePercentage={this.countPositiveFeedbackPercentage()}
+        />
       </div>
     );
   }
