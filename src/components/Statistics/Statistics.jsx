@@ -2,16 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
-  <div>
-    <h2>Statistics</h2>
-    <ul>
-      <li>Good:{good}</li>
-      <li>Neutral:{neutral}</li>
-      <li>Bad:{bad}</li>
-      <li>Total:{total}</li>
-      <li>Positive feedbac:{positivePercentage}%</li>
-    </ul>
-  </div>
+  <ul>
+    <li>Good:{good}</li>
+    <li>Neutral:{neutral}</li>
+    <li>Bad:{bad}</li>
+    <li>Total:{total}</li>
+    <li>Positive feedbac:{positivePercentage}%</li>
+  </ul>
 );
 Statistics.propTypes = {
   good: PropTypes.number.isRequired,
