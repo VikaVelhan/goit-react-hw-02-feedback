@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import css from './Statistics.module.css';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
-  <ul>
-    <li>Good:{good}</li>
-    <li>Neutral:{neutral}</li>
-    <li>Bad:{bad}</li>
-    <li>Total:{total}</li>
-    <li>Positive feedbac:{positivePercentage}%</li>
+  <ul className={css.statisticsList}>
+    <li className={css.statisticsListItem}>Good:{good}</li>
+    <li className={css.statisticsListItem}>Neutral:{neutral}</li>
+    <li className={css.statisticsListItem}>Bad:{bad}</li>
+    <li className={css.statisticsListItem}>Total:{total}</li>
+    <li className={css.statisticsListItem}>
+      Positive feedbac:{positivePercentage}%
+    </li>
   </ul>
 );
 Statistics.propTypes = {
